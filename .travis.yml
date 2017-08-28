@@ -25,7 +25,9 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install xz; fi
 
 install:
+  - autoreconf --version
   - cd htslib && autoreconf && ./configure && make -e && make test
+  - ./install.sh
 
 script:
   - ./script.sh

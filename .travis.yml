@@ -26,7 +26,7 @@ before_install:
 
 install:
   - autoreconf --version
-  - cd htslib && autoreconf && ./configure && make -e && cd ..
+  # - cd htslib && autoreconf && ./configure && make -e && cd ..
   - ./install.sh
 
 script:

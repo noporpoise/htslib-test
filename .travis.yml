@@ -1,0 +1,21 @@
+# Travis CI configuration
+# Note: there are currently issues with limiting coverity to a single compiler
+#       see https://github.com/travis-ci/travis-ci/issues/1975
+#       Instead we use a script to decide if we should do anything
+
+dist: trusty
+language: c
+compiler:
+- clang
+- gcc
+os:
+- linux
+- osx
+
+sudo: false
+
+install:
+  - ./install.sh
+
+script:
+  - ./script.sh
